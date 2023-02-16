@@ -15,8 +15,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        //binding.bottomNav.setupWithNavController(findNavController(R.id.fragment))
     }
 
     override fun onSupportNavigateUp(): Boolean {

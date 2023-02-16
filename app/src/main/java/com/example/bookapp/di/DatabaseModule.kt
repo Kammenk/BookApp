@@ -15,10 +15,8 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 @Module
 object DatabaseModule {
-
     @Provides
     fun provideBookDao(database: BooksDatabase): BooksDao = database.bookDao()
-
     @Provides
     @Singleton
     fun provideBooksDatabase(@ApplicationContext appContext: Context): BooksDatabase =

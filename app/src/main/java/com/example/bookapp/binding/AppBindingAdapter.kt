@@ -1,6 +1,7 @@
 package com.example.bookapp.binding
 
 import android.graphics.drawable.Drawable
+import android.view.View
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
@@ -64,20 +65,9 @@ object AppBindingAdapter {
         }
     }
 
-    @BindingAdapter("setAdapter")
-    fun setAdapter(
-        recyclerView: RecyclerView,
-        adapter: DataBoundListAdapter<Any, ViewDataBinding>?
-    ) {
-        adapter?.let {
-            recyclerView.adapter = it
-        }
+    @BindingAdapter("visibility")
+    @JvmStatic
+    fun setVisibility(view: View, shouldBeVisible: Boolean) {
+        view.visibility = if (shouldBeVisible) View.VISIBLE else View.GONE
     }
-
-    @Suppress("UNCHECKED_CAST")
-    @BindingAdapter("submitList")
-    fun submitList(recyclerView: RecyclerView, list: List<Any>?) {
-        submitList(recyclerView, list)
-    }
-
 }

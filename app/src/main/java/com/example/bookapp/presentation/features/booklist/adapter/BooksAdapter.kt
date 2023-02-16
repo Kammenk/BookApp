@@ -28,7 +28,6 @@ class BooksAdapter(private val listener: BookListEventListeners) : DataBoundList
         binding.listener = listener
     }
 
-
     private fun createViewDataBinding(
         @LayoutRes layout: Int,
         parent: ViewGroup

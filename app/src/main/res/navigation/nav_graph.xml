@@ -22,7 +22,12 @@
         android:id="@+id/bookDetailsFragment"
         android:name="com.example.bookapp.presentation.features.bookdetails.BookDetailsFragment"
         android:label="BookDetailsFragment"
-        tools:layout="@layout/fragment_book_details" />
+        tools:layout="@layout/fragment_book_details">
+        <argument
+            android:name="bookDetails"
+            app:argType="com.example.bookapp.data.local.BookEntity"
+            app:nullable="false" />
+    </fragment>
 
     <fragment
         android:id="@+id/addBookFragment"

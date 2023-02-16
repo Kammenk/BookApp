@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.bookapp.data.local.BookEntity
 import com.example.bookapp.data.repository.BooksRepository
 import com.example.bookapp.presentation.features.addBook.eventlisteners.AddBookEventListener
-import com.example.bookapp.presentation.snackbar.CustomSnackBar
 import com.example.bookapp.util.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -21,20 +20,19 @@ class AddBookViewModel @Inject constructor(private val booksRepository: BooksRep
     private val _errorLiveData = MutableLiveData<String?>()
     val errorLiveData: LiveData<String?> = _errorLiveData
 
-    private val _loading = MutableLiveData<Boolean>()
-    val loading: LiveData<Boolean> = _loading
-
-    private var _customSnackBarLiveData: SingleLiveEvent<CustomSnackBar> = SingleLiveEvent()
-    val customSnackBarLiveData: LiveData<CustomSnackBar>
-        get() = _customSnackBarLiveData
-
-    private var _navigationLiveData: SingleLiveEvent<BookEntity> = SingleLiveEvent()
-    val navigationLiveData: LiveData<BookEntity>
+    private var _navigationLiveData: SingleLiveEvent<Boolean> = SingleLiveEvent()
+    val navigationLiveData: LiveData<Boolean>
         get() = _navigationLiveData
 
     override fun onBookAdd(book: BookEntity) {
         viewModelScope.launch(Dispatchers.IO) {
-            booksRepository.addBook(book)
+            booksRepository.addBook(book).let {
+                if (it > 0) {
+                    _navigationLiveData.postValue(true)
+                } else {
+                    _errorLiveData.postValue("An error occurred")
+                }
+            }
         }
     }
 }

@@ -4,9 +4,8 @@ import com.example.bookapp.data.local.BookEntity
 import com.example.bookapp.util.Resource
 
 interface IBooksRepository {
-
-    suspend fun getBookDetails(bookId: Int): Resource<BookEntity>
     suspend fun getAllBooks(): Resource<List<BookEntity>>
-    suspend fun addBook(book: BookEntity)
+    suspend fun addBook(book: BookEntity): Long
     suspend fun deleteBook(bookEntity: BookEntity)
+    suspend fun getBooksByName(bookTitle: String): Resource<List<BookEntity>>
 }

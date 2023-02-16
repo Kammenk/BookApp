@@ -13,4 +13,4 @@ data class BookEntity(
     val bookTitle: String,
     @ColumnInfo(name = "book_description")
     val bookDescription: String
-)
+) : java.io.Serializable

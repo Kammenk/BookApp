@@ -21,7 +21,7 @@
             android:id="@+id/titleTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add a book"
+            android:text="@string/add_a_book"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
-            android:hint="Enter the book covers as URL"
+            android:hint="@string/enter_the_book_covers_as_url"
             app:errorIconTint="@color/black"
             app:layout_constraintTop_toBottomOf="@id/titleTv">
 
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
-            android:hint="Enter books name"
+            android:hint="@string/enter_books_name"
             app:errorIconTint="@color/black"
             app:layout_constraintTop_toBottomOf="@id/bookImageField">
 
@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
-            android:hint="Enter a brief description"
+            android:hint="@string/enter_a_brief_description"
             app:errorIconTint="@color/black"
             app:layout_constraintTop_toBottomOf="@id/bookTitleField">
 
@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Add book"
+            android:text="@string/add_book"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bookDescriptionField" />

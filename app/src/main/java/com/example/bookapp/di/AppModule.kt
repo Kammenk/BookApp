@@ -14,7 +14,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 @Module
 object AppModule {
-
     @Provides
     fun provideBooksRepository(booksDao: BooksDao): BooksRepository =
         BooksRepository(booksDao)

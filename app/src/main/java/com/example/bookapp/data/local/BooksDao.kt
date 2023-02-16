@@ -10,7 +10,7 @@ import androidx.room.Query
 interface BooksDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addBook(book: BookEntity)
+    suspend fun addBook(book: BookEntity): Long
 
     @Delete
     suspend fun deleteBook(book: BookEntity)
@@ -18,6 +18,6 @@ interface BooksDao {
     @Query("SELECT * FROM book")
     suspend fun getAllBooks(): List<BookEntity>
 
-    @Query("SELECT * FROM book WHERE id == :bookId")
-    suspend fun getBookDetails(bookId: Int): BookEntity
+    @Query("SELECT * FROM book WHERE book_title LIKE '%' || :bookTitle  || '%'")
+    suspend fun getBooksByName(bookTitle: String): List<BookEntity>
 }

@@ -1,5 +1,26 @@
 <resources>
     <string name="app_name">BookApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Book List-->
+    <string name="your_books">Your books</string>
+    <string name="you_have_no_books_click_the_button_below_to_add_one_to_your_library">You have no books. Click the button below to add one to your library</string>
+
+    <!-- Add Book-->
+    <string name="add_a_book">Add a book</string>
+    <string name="enter_the_book_covers_as_url">Enter the book covers as URL</string>
+    <string name="enter_books_name">Enter books name</string>
+    <string name="enter_a_brief_description">Enter a brief description</string>
+    <string name="add_book">Add book</string>
+
+    <!-- Book Details-->
+    <string name="book_description">Book description</string>
+    <string name="title">Title</string>
+
+    <!-- Errors -->
+    <string name="error_title">Error</string>
+    <string name="book_cover_requirements">Please enter a valid URL(example: https://www…)</string>
+    <string name="title_and_description_requirements">Field must not be empty</string>
+
+    <!--Misc-->
+    <string name="okay">OK</string>
 </resources>
